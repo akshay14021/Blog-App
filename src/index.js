@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './styles/styles.scss';
 import firebase from './firebase/firebase';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter.js';

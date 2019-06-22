@@ -1,17 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 
 const BlogItemDetail = (props) => {
     const link = `/edit/${props.blog.id}`
     return (
-        <div>
+        <div className="content-container">
             <h1>{props.blog.title}</h1>
-            <span>{moment(props.blog.createdAt).format('MMMM Do, YYYY')}</span>
             <p>{props.blog.body}</p>
             <Link to={link}>
-                <button>Edit Expense</button>
+                <button className="button button--createlink">Edit Blog</button>
             </Link>
         </div>
     );

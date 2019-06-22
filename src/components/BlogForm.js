@@ -32,12 +32,24 @@ class BlogForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmitHandler}>
-                {this.state.error && <p>{this.state.error}</p>}
-                <input type="text" placeholder="Blog Title" value={this.state.title} onChange={this.onTitleChange}/>
-                <textarea placeholder="Blog Body" value={this.state.body} onChange={this.onBodyChange} ></textarea>
+            <form className="form" onSubmit={this.onSubmitHandler}>
+                {this.state.error && <p className="form__error">{this.state.error}</p>}
+                <input 
+                    type="text" 
+                    placeholder="Blog Title" 
+                    value={this.state.title} 
+                    onChange={this.onTitleChange}
+                    className="form__textinput"
+                />
+                <textarea 
+                    placeholder="Blog Body" 
+                    value={this.state.body} 
+                    onChange={this.onBodyChange}
+                    className="form__textarea"    
+                >
+                </textarea>
                 <div>
-                    {this.props.blog ? <button>Edit Blog</button> : <button>Create Blog</button>}
+                    {this.props.blog ? <button className="button button--createlink">Edit Blog</button> : <button className="button button--createlink">Create Blog</button>}
                 </div>
             </form>
         );

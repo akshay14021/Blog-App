@@ -6,18 +6,24 @@ import { startRemoveBlog, startEditBlog } from '../actions/blogs';
 const EditBlog = (props) => {
     return (
         <div>
-            <h1>Edit Blog</h1>
-            <BlogForm 
-                onSubmit={(title, body) => {
-                    props.dispatch(startEditBlog(props.blog.id, { title, body }))
+            <div className="action-content">
+                <div className="content-container">
+                    <h1>Edit Blog</h1>
+                </div>
+            </div>
+            <div className="content-container">
+                <BlogForm
+                    onSubmit={(title, body) => {
+                        props.dispatch(startEditBlog(props.blog.id, { title, body }))
+                        props.history.push('/homepage')
+                    }}
+                    blog={props.blog}
+                />
+                <button className="button button--removelink" onClick={(e) => {
+                    props.dispatch(startRemoveBlog(props.blog.id))
                     props.history.push('/homepage')
-                }}
-                blog={props.blog}
-            />
-            <button onClick={(e) => {
-                props.dispatch(startRemoveBlog(props.blog.id))
-                props.history.push('/homepage')
-            }}>Remove Blog</button>
+                }}>Remove Blog</button>
+            </div>
         </div>
     );
 };

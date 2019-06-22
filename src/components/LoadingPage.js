@@ -2,8 +2,8 @@ import React from 'react';
 
 const LoadingPage = (props) => {
     return (
-        <div>
-            <img src="/images/loading.gif" alt="" />
+        <div className="loading">
+            <img className="loading__image" src="/images/loading.gif" alt="" />
         </div>
     );
 };

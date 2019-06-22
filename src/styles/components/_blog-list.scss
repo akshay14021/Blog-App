@@ -1,0 +1,37 @@
+.blog-list-body {
+    margin-bottom: $m-size;
+    @media (min-width: $desktop-breakpoint) {
+        margin-bottom: $l-size;
+    }
+}
+
+.blog-list-item {
+    border: 1px solid darken($color: $off-white, $amount: 7%);
+    color: $dark-grey;
+    display: flex;
+    flex-direction: column;
+    padding: $s-size;
+    text-decoration: none;
+    transition: background .3s ease;
+    margin-top: 3rem;
+    &:hover {
+        background: $off-white;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $m-size;
+    }
+}
+
+.blog-item--message {
+    align-items: center;
+    color: $grey;
+    justify-content: center;
+    padding: $m-size;
+    &:hover {
+        background: none;
+    }
+}

@@ -5,9 +5,15 @@ import { startLogout } from '../actions/auth';
 
 const Header = (props) => {
     return (
-        <header>
-            <Link to="/homepage"><h1>Blogs</h1></Link>
-            <button onClick={props.dispatch(startLogout)} >Logout</button>
+        <header className="header">
+            <div className="content-container">
+                <div className="header__content">
+                    <Link className="header__title" to="/homepage">
+                        <h1>Blogs</h1>
+                    </Link>
+                    <button className="button button--link" onClick={props.dispatch(startLogout)} >Logout</button>
+                </div>
+            </div>
         </header>
     );
 };

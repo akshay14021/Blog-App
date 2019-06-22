@@ -6,13 +6,19 @@ import { startAddBlog } from '../actions/blogs';
 const AddBlog = (props) => {
     return (
         <div>
-            <h1>Create Blog</h1>
-            <BlogForm 
-                onSubmit={(title, body, createdAt) => {
-                    props.dispatch(startAddBlog(title, body, createdAt))
-                    props.history.push('/homepage')
-                }}
-            />
+            <div className="action-content">
+                <div className="content-container">
+                    <h1>Create Blog</h1>
+                </div>
+            </div>
+            <div className="content-container">
+                <BlogForm
+                    onSubmit={(title, body, createdAt) => {
+                        props.dispatch(startAddBlog(title, body, createdAt))
+                        props.history.push('/homepage')
+                    }}
+                />
+            </div>
         </div>
     );
 };
